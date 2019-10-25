@@ -53,6 +53,7 @@ function runsearch() {
             message: "What is the product id you would like to buy ?",
             name: "productSelection",
         },
+        
 
         {
             type: "input",
@@ -94,102 +95,4 @@ function updateProduct(productId, newStockQty) {
 
     afterConnection();
 }
-
-
-
-
-//  
-
-//     function searchProductName() {
-//         inquirer.prompt([
-//             {
-//                 type: "input",
-//                 message: "What is the product name you would like to buy ?",
-//                 name: "nameInput"
-//             }
-//         ]).then(function (inquirerResponse) {
-
-//             var query = connection.query(
-//                 "SELECT * FROM bamazon_DB.products WHERE ?",
-//                 {
-//                     product_name: inquirerResponse.nameInput
-//                 },
-//                 function (err, response) {
-//                     if (err)
-//                         throw err;
-//                     console.log("------------------------");
-
-//                     for (var i = 0; i < response.length; i++)
-//                         console.log(response[i].id + " : " + response[i].product_name + ", " + response[i].price + ", " + response[i].stock_quantity);
-//                     console.log("-----------------------");
-//                 }
-//             );
-//         })
-//     }
-
-
-//     function searchProductQuantity() {
-//         inquirer.prompt([
-//             {
-//                 type: "input",
-//                 message: "How many units of products would you like to buy ?",
-//                 name: "numInput"
-//             }
-//         ]).then(function (inquirerResponse) {
-
-//             var query = connection.query(
-//                 "SELECT * FROM bamazon_DB.products WHERE ?",
-//                 {
-//                     stock_quantity: inquirerResponse.numInput
-//                 },
-//                 function (err, response) {
-//                     if (err)
-//                         throw err;
-//                     console.log("------------------------");
-
-//                     for (var i = 0; i < response.length; i--)
-
-//                         if (response.length >= quantityInput)
-//                             console.log(response[i].id + " : " + response[i].product_name + ", " + response[i].price + ", " + response[i].stock_quantity);
-
-//                         else {
-//                             console.log('insufficient quantity');
-
-//                             updateProduct();
-//                         }
-
-//                 }
-//             )
-
-//             function updateProduct() {
-//                 console.log("Updating stock_quantity...\n");
-//                 var query = connection.query(
-//                     "UPDATE products SET ? WHERE ?",
-//                     [
-//                         {
-//                             stock_quantity: 50
-//                         },
-
-//                         {
-//                             product_name: "clothes",
-//                         }
-//                     ],
-//                     function (err, res) {
-//                         if (err) throw err;
-//                         console.log(res.affectedRows + " products updated!\n");
-//                         // Call deleteProduct AFTER the UPDATE completes
-//                         deleteProduct();
-//                     }
-//                 );
-//             }
-
-//         })
-//     }
-// }
-
-
-
-
-
-
 
